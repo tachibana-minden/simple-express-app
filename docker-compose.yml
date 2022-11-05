@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+
+  app:
+    # コンテナ名
+    container_name: app
+    # image
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # コンテナの中に入る
+    tty: true
+    # ボリューム
+    volumes:
+      - ".:/app"
+    # WORKDIR
+    working_dir: /app
+    # 環境変数
+    environment:
+      TZ: "Asia/Tokyo"
+    # ポート開放
+    ports:
+      - 5000:5000
+    # 起動コマンド
+    command: bash -c "npm install && node /app/index.js"
