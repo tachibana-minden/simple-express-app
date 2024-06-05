@@ -1,5 +1,5 @@
 # FROM
-FROM node:12.22
+FROM node:18
 
 # 環境変数
 ENV TZ Asia/Tokyo
@@ -21,7 +21,7 @@ RUN cd /app && \
     npm install
 
 # ポート
-EXPOSE 5000
+EXPOSE 5111
 
 # パラメータ未指定時の起動コマンド
 CMD bash -c "npm install && node index.js"

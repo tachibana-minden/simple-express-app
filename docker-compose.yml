@@ -21,6 +21,6 @@ services:
       TZ: "Asia/Tokyo"
     # ポート開放
     ports:
-      - 5000:5000
+      - 5111:5111
     # 起動コマンド
     command: bash -c "npm install && node /app/index.js"
